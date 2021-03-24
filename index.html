@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+	
+	<title>CSCI6600TeamProject</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<style>
+		h1 {
+			color: #5386E4;
+			text-align: center;
+		}
+
+		#logoMessage {
+		  color: #434B63;
+		  text-align: center;
+		} 
+
+		
+		#namecard {
+			background-color:white;
+			margin: 25%;
+			max-height: 50%;
+			max-width: 50%;
+			float:center;
+			margin-top: 10%;
+		}
+		
+		body {
+			background-color: #C3C3C3;
+		}
+
+
+		#SignUpBtn {
+			background-color: #BBE1C3;
+		}
+
+		#SignUpBtn:hover {
+			background-color: #BBE100;
+		}
+
+		#LoginBtn {
+			background-color: #5386E4;
+		}
+
+		#LoginBtn:hover {
+			background-color: #538600;
+		}
+
+		#simplecard {
+			background-color:  #C3C3C3;
+			
+		}
+		
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+
+<body>
+<div class="container" align="center" style="margin-top=30" id="namecard">
+	<div class="card" style= "left-margin 30%; width: 40%; float: center;">
+	    <img class="card-img-top" src="clik.PNG" alt="Clik" style="float: center"; height="100"; width="100";}>
+    	<div class="card-body">
+    		<h3 class="card-title" align="center">Click</h3>
+			<ul class="listgroup">
+			<li class="list-group-item"> 
+				<div class="formgroup" action='index.html'>
+				<div class="formtitle">
+					<div class="input nobottomborder">
+						<div class="formgroup">
+							<div class="inputtext">User Name: </div>
+							<div class="inputcontent"> <input type="username" name="username"
+						 	id="username" placeholder="username"/><br />
+							</div>
+						</div>
+
+					<div class="formgroup">
+						<div class="inputtext">Password: </div>
+						<div class="inputcontent"> <input type="password" name="password" 
+						id='password' placeholder="password" /><br />
+						</div>
+					</div>
+
+					<div class="formgroup">
+						<button type="button" class="btn btn-default" 
+					 	id='LoginBtn'>Submit</button>                               
+					</div>
+			</li>
+			<li class="list-group-item">
+				<div>
+					<button type="button" class="btn btn-default" 
+					 id='CreateAccountBtn'>Create An Account</button>                               
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>             
+
+
+<!-- the log in modal -->
+<div class="modal fade" id="CreateAccountModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button> 
+				<h4 class="modal-title">Create Account</h4>                                                             
+			</div> 
+			<div class="modal-body">
+				<div class="wrapper">
+					<div class="form1" action='http://google.com'>
+						<div class="formtitle">
+							<div class="input nobottomborder">
+								<div class="formgroup">
+									<div class="inputtext">User Name: 
+									</div>
+							    	<div class="inputcontent"> <input 
+							    		type="username" name="username" id="username" placeholder="username"/><br />
+							    	</div>
+							    </div>
+							    <div class="formgroup">
+							    	<div class="inputtext">Password: 
+							    	</div>
+							    	<div class="inputcontent"> <input 
+							    	type="password" name="password" id='password'
+							    	placeholder="password" /><br />
+							    	</div>
+							    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>   
+			
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" 
+				data-dismiss="modal" id="CreateAccountInfoBtn">Submit</button>                               
+			</div>
+		</div>                                                                       
+	</div>  
+</div>  
+
+
+
+
+
+<script>
+
+
+$(document).ready(function(){
+	$('#CreateAccountBtn').click(function(){
+  		$('#CreateAccountModal').modal('show')
+	});
+});
+
+$(document).ready(function(){
+	$('#LoginBtn').click(function(){
+		window.location.href = 'mypage.html'
+	});
+});
+
+$(document).ready(function(){
+	$('#SignUpInfoBtn').click(function(){
+		window.alert("Please login with vampire vampire")
+	});
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>
