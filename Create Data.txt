@@ -1,0 +1,44 @@
+
+create (c:Clik {CID:0001,EID1:001, EID2: 002, EID3:003})
+
+create (p:Person {PID:0001,first_name:"Greg",last_name:"Sutton",age:"34",interest1:"gardening",interest2:"Travel",interest3:"pets",interest4:"baking",img:"greg_profile.jpg"})
+create (p:Person {PID:0002,first_name:"Kelle",last_name:"Clark",age:"25",interest1:"Math",interest2:"Travel",interest3:"Rock Climbing",interest4:"Parties",img: "kelle_profile.jpg"});
+create (p:Person {PID:0003,first_name:"John",last_name:"Smith",age:"30",interest1:"Dogs",interest2:"Running",interest3:"TV",interest4:"Pets",img: "john_profile.jpg"});
+create (p:Person {PID:0004,first_name:"Mary",last_name:"Williams",age:"27",interest1:"Cats",interest2:"Excerise",interest3:"IT",interest4:"Comedy",img: "mary_profile.jpg"});
+create (p:Person {PID:0005,first_name:"Kim",last_name:"Jones",age:"28",interest1:"Zoo",interest2:"Plants",interest3:"Crafts",interest4:"Acting",img: "kim_profile.jpg"});
+create (p:Person {PID:0006,first_name:"Jonathan",last_name:"Peters",age:"40",interest1:"RollerCoasters",interest2:"Kids",interest3:"Phones",interest4:"Plays",img: "jonathan_profile.jpg"});
+create (p:Person {PID:0007,first_name:"Avery",last_name:"Xlay",age:"29",interest1:"Friends",interest2:"Love",interest3:"Painting",interest4:"Hiking",img: "avery_profile.jpg"});
+create (p:Person {PID:0008,first_name:"Jimmy",last_name:"None",age:"35",interest1:"Partying",interest2:"Boating",interest3:"Music",interest4:"Tech",img: "jimmy_profile.jpg"});
+create (p:Person {PID:9,first_name:"JJ",last_name:"Develupally",age:"31",interest1:"Food",interest2:"Computers",interest3:"Fashion",interest4:"Dogs",img: "jj_profile.jpg"});
+create (p:Person {PID:10,first_name:"Rui",last_name:"Chan",age:"30",interest1:"Swimming",interest2:"Food",interest3:"Fashion",interest4:"Magic",img: "rui_profile.jpg"});
+
+
+
+
+create (e:Event {EID:0001,EventC_Name:"OMally_Bar",Date:"04/30/2021",Location:"OMally_Bar, Raleigh NC",Time:"2100"});
+create (e:Event {EID:0002,EventC_Name:"Top Golf",Date:"05/01/2021",Location:"Top Golf, Raleigh NC",Time:"2000"});
+create (e:Event {EID:0001,EventC_Name:"Myrtle Beach",Date:"05/21/2021",Location:"Sand Dunes Hotel, Myrtle Beach SC",Time:"1400"});
+
+
+
+
+MATCH (a:Person), (c:Clik) WHERE a.PID = 1 AND c.CID = 1 CREATE (a)-[r:In_Group]->(c) RETURN type(r);
+MATCH (a:Person), (c:Clik) WHERE a.PID = 2 AND c.CID = 1 CREATE (a)-[r:In_Group]->(c) RETURN type(r);
+MATCH (a:Person), (c:Clik) WHERE a.PID = 3 AND c.CID = 1 CREATE (a)-[r:In_Group]->(c) RETURN type(r);
+MATCH (a:Person), (c:Clik) WHERE a.PID = 4 AND c.CID = 1 CREATE (a)-[r:In_Group]->(c) RETURN type(r);
+MATCH (a:Person), (c:Clik) WHERE a.PID = 5 AND c.CID = 1 CREATE (a)-[r:In_Group]->(c) RETURN type(r);
+MATCH (a:Person), (c:Clik) WHERE a.PID = 6 AND c.CID = 1 CREATE (a)-[r:In_Group]->(c) RETURN type(r);
+MATCH (a:Person), (c:Clik) WHERE a.PID = 7 AND c.CID = 1 CREATE (a)-[r:In_Group]->(c) RETURN type(r);
+MATCH (a:Person), (c:Clik) WHERE a.PID = 8 AND c.CID = 1 CREATE (a)-[r:In_Group]->(c) RETURN type(r);
+MATCH (a:Person), (c:Clik) WHERE a.PID = 9 AND c.CID = 1 CREATE (a)-[r:In_Group]->(c) RETURN type(r);
+MATCH (a:Person), (c:Clik) WHERE a.PID = 10 AND c.CID = 1 CREATE (a)-[r:In_Group]->(c) RETURN type(r);
+
+
+MATCH (c:Clik), (e:Event) WHERE c.CID = 1 AND e.EID = 1 CREATE (c)-[r:Interested_In]->(e) RETURN type(r);
+MATCH (c:Clik), (e:Event) WHERE c.CID = 1 AND e.EID = 2 CREATE (c)-[r:Interested_In]->(e) RETURN type(r);
+
+
+
+create (m:Messages {MID:1,PID:1, message:"Hey guys, you going to the beach?", datetime: "04192012 1800"})
+MATCH (m:Message), (c:Clik) WHERE m.MID = 1 AND c.CID = 1 CREATE (m)-[r:SentTo]->(c) RETURN type(r);
+

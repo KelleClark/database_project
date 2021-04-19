@@ -30,16 +30,16 @@
 		}
 		
 		body {
-			background-color: #C3C3C3;
+			background-color: #fffff;
 		}
 
 
 		#SignUpBtn {
-			background-color: #5386E4;
+			background-color: #BBE1C3;
 		}
 
 		#SignUpBtn:hover {
-			background-color: #538600;
+			background-color: #BBE100;
 		}
 
 		#LoginBtn {
@@ -55,48 +55,59 @@
 			
 		}
 
+
 		h1 {
-			color: #5386E4;
+			color: #BBE1C3;
 			text-align: center;
 		}
 
 		h2 {
-			color: #5386E4;
+			color: #BBE1C3;
 			text-align: center;
 		}
 
+		h5 {
+			color: #BBE1C3;
+		}
+		
+		p {
+		  color: #BBE1C3;
+		  text-align: left;
+		} 
+
+		div{
+			
+			
+		}
+
+		
 
 		.navbar {
 			  list-style-type: none;
 			  margin: 0;
 			  padding: 0;
 			  overflow: hidden;
-			  background-color: #FFFFFF;
+			  background-color: #BBE1C3;
 			}
 
 		.navbar li {
 			  display: block;
-			  color: #5386E4;
+			  color: white;
 			  text-align: center;
 			  text-decoration: none;
 			}
 			  
 
 		.navbar li:hover{
-			 background-color: #5386E0;
+			 background-color: #BBE100;
 			}
-
-		.navbar ul li h4:hover{
-			color: #FFFFFF;
-		}
 
 		.navbar li a:hover {
 			background-color: #BBE100;
-			color: #FFFFFF;
 			}
 
 		.navbar ul li h4 {
-			color: #5386E4;
+			color: white;
 			text-align: center;
 		}
 
@@ -110,19 +121,32 @@
 		}
 
 		#UpDateProfileBtn {
-			background-color: #5386E4;
+			background-color: #BBE100;
 		}
 
 		#UpDateProfileBtn:hover {
-			background-color: #538600;
+			background-color: #BBE1C3;
+		}
+
+		#lookatstatsbtn {
+			background-color: #BBE100;
+			color: white;
+			float:center;
+
+		}
+
+		#enterstudentbtn {
+			background-color: #BBE100;
+			color: white;
+			position: center;
 		}
 
 		#LogOffBtn {
-			background-color: #5386E4;
+			background-color: #BBE100;
 		}
 
 		#LogOffBtn:hover {
-			background-color: #538600;
+			background-color: #BBE1C3;
 		}
 
 		
@@ -134,28 +158,43 @@
         }
 
         #viz {
-            width: 900px;
-            height: 700px;
+            width: 500px;
+            height: 500px;
             border: 1px solid lightgray;
             font: 22pt arial;
-            float:right;
+			float: left;
+        }
+		
+		    #viz2 {
+            width: 500px;
+            height: 500px;
+            border: 1px solid lightgray;
+            font: 22pt arial;
+			float:left;
+        }
+		
+		 #viz3 {
+            width: 500px;
+            height: 500px;
+            border: 1px solid lightgray;
+            font: 22pt arial;
+			float:left;
         }
 
-    </style>
-    <style type="text/css">
-    .node { stroke: #222; stroke-width: 1.5px; }
-    .node.Person { fill: #BBB; }
-    .node.Event { fill: #BBB; }
-    .link { stroke: #999; stroke-opacity: .6; stroke-width: 1px; }
+
     </style>
 
-    <!-- : load from local download (do a npm build as well...) 
-   
-	<script src='C:\Users\17046\node_modules\neovis.js\dist\neovis.js'></script> -->
+	<!-- jsDelivr CDN non-minified -->
+	<script src="https://cdn.jsdelivr.net/npm/neo4j-driver"></script>
 
-    <script src='https://cdn.neo4jlabs.com/neovis.js/v1.5.0/neovis.js'></script>
+	<script src="C:\Users\Gks28358\Desktop\database_project-main\database_project-main\neovis.js-master\neovis.js-master\dist\neovis.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<!-- Direct reference -->
+	
+
+	
+	
 
 
     <script
@@ -174,29 +213,37 @@
 			var config = {
 				container_id: "viz",
 				server_url: "bolt://localhost:7687",
-				server_user: "kelle",
-				server_password: "111",
+				server_user: "greg",
+				server_password: "1111",
 				labels: {
 					//"Person": "name",
 					"Person": {
 						"caption": "first_name",
-						"size": "2",
-						"community": "10"
+						"size": "pagerank",
+                        "community": "community",
+                        "title_properties": [
+                            "first_name",
+							"last_name",
+							"img",
+                            "pagerank"
+                        ],
+						"image": "img"
 						//"sizeCypher": "MATCH (n) WHERE id(n) = {id} MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
 					},
-					"Event":{
-						"caption":"Location",
-						"size": "1",
-						"community": "5"
-					}
+					"Clik": {
+						"caption": "Clik",
+						"size": 1,
+						"community": 1
+						//"sizeCypher": "MATCH (n) WHERE id(n) = {id} MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
+					},
+					
+										
 				},
-				relationships: {
-					"interestedIn": {
-						"thickness": 1,
-						"caption": false
-					}
-				},
-				initial_cypher: "MATCH n=(:Person), m=(:Event),p=(:Person)-[:interestedIn]->(:Event) RETURN n,m,p"
+
+				initial_cypher: "MATCH (n:Person)-[r]-(c:Clik) RETURN n,c,r"
+				//initial_cypher: "MATCH (n:Person) RETURN n"
+
+				
 			};
 
 			viz = new NeoVis.default(config);
@@ -204,14 +251,100 @@
 			console.log(viz);
 
 		}
+		
+		
+		var viz2;
+
+		function draw2() {
+			var config = {
+				container_id: "viz2",
+				server_url: "bolt://localhost:7687",
+				server_user: "greg",
+				server_password: "1111",
+				labels: {
+					//"Person": "name",
+					"Clik": {
+						"caption": 'Clik',
+						"size": 1,
+						"community": 1
+						//"sizeCypher": "MATCH (n) WHERE id(n) = {id} MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
+					},
+					"Event": {
+						"caption": "EventC_Name",
+						"size": 1,
+						"community": 1
+						//"sizeCypher": "MATCH (n) WHERE id(n) = {id} MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
+					},
+					
+										
+				},
+
+				initial_cypher: "MATCH (c:Clik)-[r]-(e:Event) RETURN c ,e,r"
+				//initial_cypher: "MATCH (n:Person) RETURN n"
+
+				
+			};
+
+			viz2 = new NeoVis.default(config);
+			viz2.render();
+			console.log(viz2);
+
+		}
+		
+		var viz3;
+
+		function draw3() {
+			var config = {
+				container_id: "viz3",
+				server_url: "bolt://localhost:7687",
+				server_user: "greg",
+				server_password: "1111",
+				labels: {
+					//"Person": "name",
+					"Person": {
+						"caption": 'first_name',
+						"size": 1,
+						"community": 1
+						//"sizeCypher": "MATCH (n) WHERE id(n) = {id} MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
+					},
+					"Messages": {
+						"caption": "message",
+						"size": 1,
+						"community": 1
+						//"sizeCypher": "MATCH (n) WHERE id(n) = {id} MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
+					},
+					
+										
+				},
+
+				initial_cypher: "MATCH (p:Person)-[r]-(m:Messages) RETURN p ,m,r"
+				//initial_cypher: "MATCH (n:Person) RETURN n"
+
+				
+			};
+
+			viz3 = new NeoVis.default(config);
+			viz3.render();
+			console.log(viz3);
+
+		}
+			
+			
+		function start(){
+			draw();
+			draw2();
+			draw3();
+			}
+
+		
     </script>
 </head>
-<body onload="draw()">
+<body onload="start()">
 <nav class = "navbar navbar-default" role = "navigation">
 <div class="container-fluid">
    <div class = "navbar-header" >
       <a class = "navbar-brand" href = "index.html"><span>
-      	<img src = "img/clik.png" height="47" class="img img-fluid img-responsive" ></span></a>
+      	<img src = "clik.png" height="47" class="img img-fluid img-responsive" ></span></a>
    </div>
 
    <div>
@@ -229,42 +362,41 @@
    </div>
 </div>
 </nav>
-
-<div class="container-fluid">
-	<div class='row'>
-		<div class="col-8" align="right" id="viz">	
-    	</div>
-		<div class="col-4">
-			<h2>Cypher query: </h2>
-			<div style={background-color:"white"}>
-				<textarea rows="4" cols=30 id="cypher"></textarea><br>
-				<input type="submit" value="Submit" id="reload">
-				<input type="submit" value="Stabilize" id="stabilize">
-			</div>
-		<div>
-		
-	</div>
-</div>
-
+<table>
+<tr>
+<td><h1>Your Clik</h1> </td>
+<td><h1>Events</h1> </td>
+<td><h1>Messages</h1> </td>
+</tr>
+<tr>
+<td> <div id="viz"></div> </td>
+<td> <div id="viz2"></div> </td>
+<td> <div id="viz3"></div> </td>
+</tr>
+</table>
+<!-- <div id ="message-box"> -->
+<!-- <h1> Messages </H1> -->
+<!-- <textarea rows="4" cols=100 id="cypher"></textarea><br> -->
+<!-- <input type="submit" value="Refresh" id="reload"> -->
+<!-- <input type="submit" value="Stabilize" id="stabilize"> -->
+<!-- </div> -->
 </body>
 
 <script>
 	$("#reload").click(function() {
 
-		var cypher = $("#cypher").val();
-
-		if (cypher.length > 3) {
-			viz.renderWithCypher(cypher);
-		} else {
+		
 			console.log("reload");
-			viz.reload();
+			viz1.reload();
+			viz2.reload();
+			viz3.reload();
 
-		}
+		//}
 
-	});
+	}
 
 	$("#stabilize").click(function() {
-		viz.stabilize();
+		viz3.stabilize();
 	})
 
 </script>
