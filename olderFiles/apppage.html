@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+<head>
+
+	<title>CSCI6600TeamProject</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<style>
+		h1 {
+			color: #5386E4;
+			text-align: center;
+		}
+
+		#logoMessage {
+		  color: #434B63;
+		  text-align: center;
+		} 
+
+		
+		#namecard {
+			background-color:white;
+			margin: 25%;
+			max-height: 50%;
+			max-width: 50%;
+			float:center;
+			margin-top: 10%;
+		}
+		
+		body {
+			background-color: #C3C3C3;
+		}
+
+
+		#SignUpBtn {
+			background-color: #5386E4;
+		}
+
+		#SignUpBtn:hover {
+			background-color: #538600;
+		}
+
+		#LoginBtn {
+			background-color: #5386E4;
+		}
+
+		#LoginBtn:hover {
+			background-color: #538600;
+		}
+
+		#simplecard {
+			background-color:  #C3C3C3;
+			
+		}
+
+		h1 {
+			color: #5386E4;
+			text-align: center;
+		}
+
+		h2 {
+			color: #5386E4;
+			text-align: center;
+		}
+
+
+		.navbar {
+			  list-style-type: none;
+			  margin: 0;
+			  padding: 0;
+			  overflow: hidden;
+			  background-color: #FFFFFF;
+			}
+
+		.navbar li {
+			  display: block;
+			  color: #5386E4;
+			  text-align: center;
+			  text-decoration: none;
+			}
+			  
+
+		.navbar li:hover{
+			 background-color: #5386E0;
+			}
+
+		.navbar ul li h4:hover{
+			color: #FFFFFF;
+		}
+
+		.navbar li a:hover {
+			background-color: #BBE100;
+			color: #FFFFFF;
+			}
+
+		.navbar ul li h4 {
+			color: #5386E4;
+			text-align: center;
+		}
+
+		.navbar-brand img {
+			max-height: 250%;
+			max-width: 100%;
+		}
+
+		.active {
+			background-color: #C3C3C3;
+		}
+
+		#UpDateProfileBtn {
+			background-color: #5386E4;
+		}
+
+		#UpDateProfileBtn:hover {
+			background-color: #538600;
+		}
+
+		#LogOffBtn {
+			background-color: #5386E4;
+		}
+
+		#LogOffBtn:hover {
+			background-color: #538600;
+		}
+
+		
+	</style>
+    
+    <style type="text/css">
+        html, body {
+            font: 16pt arial;
+        }
+
+        #viz {
+            width: 900px;
+            height: 700px;
+            border: 1px solid lightgray;
+            font: 22pt arial;
+            float:right;
+        }
+
+    </style>
+    <style type="text/css">
+    .node { stroke: #222; stroke-width: 1.5px; }
+    .node.Person { fill: #BBB; }
+    .node.Event { fill: #BBB; }
+    .link { stroke: #999; stroke-opacity: .6; stroke-width: 1px; }
+    </style>
+
+    <!-- : load from local download (do a npm build as well...) 
+   
+	<script src='C:\Users\17046\node_modules\neovis.js\dist\neovis.js'></script> -->
+
+    <script src='https://cdn.neo4jlabs.com/neovis.js/v1.5.0/neovis.js'></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+		// define config car
+		// instantiate nodevis object
+		// draw
+
+		var viz;
+
+		function draw() {
+			var config = {
+				container_id: "viz",
+				server_url: "bolt://localhost:7687",
+				server_user: "kelle",
+				server_password: "111",
+				labels: {
+					//"Person": "name",
+					"user":{
+						"caption": "email",
+						"size": "2",
+						"community": "10"
+						//"sizeCypher": "MATCH (n) WHERE id(n) = {id} MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
+					},
+					"Event":{
+						"caption":"Location",
+						"size": "1",
+						"community": "5"
+					}
+				},
+				relationships: {
+					"interestedIn": {
+						"thickness": 1,
+						"caption": false
+					}
+				},
+				initial_cypher: "MATCH n=(:user), m=(:Event),p=(:user)-[:interestedIn]->(:Event) RETURN n,m,p"
+			};
+
+			viz = new NeoVis.default(config);
+			viz.render();
+			console.log(viz);
+		}
+    </script>
+</head>
+<body onload="draw()">
+<nav class = "navbar navbar-default" role = "navigation">
+<div class="container-fluid">
+   <div class = "navbar-header" >
+      <a class = "navbar-brand" href = "index.html"><span>
+      	<img src = "img/clik.png" height="47" class="img img-fluid img-responsive" ></span></a>
+   </div>
+
+   <div>
+   	<ul class = "nav navbar-nav">
+   		 <li><a href="index.html"><h4> Home </h4></a></li>
+		  <li><a class = "active" href="mypage.html"><h4> My Page</h4></a></li>
+		  <li><a href="mypage.html"><h4> Add Friend </h4></a></li>
+		 <li><a href="mypage.html"><h4> Add Activity </h4></a></li>
+		 <li><a href="mypage.html"><h4>Join Activity</h4></a></li>
+	</ul>
+   </div>
+    <div class="nav navbar-nav navbar-right">
+   		<button type="button" id="UpDateProfileBtn" class="btn btn-primary">Update Profile</button>
+		<button type="button" id="LogOffBtn" class="btn btn-primary" >Log Off</button>
+   </div>
+</div>
+</nav>
+
+<div class="container-fluid">
+	<div class='row'>
+		<div class="col-8" align="right" id="viz">	
+    	</div>
+		<div class="col-4">
+			<h2>Cypher query: </h2>
+			<div style={background-color:"white"}>
+				<textarea rows="4" cols=30 id="cypher"></textarea><br>
+				<input type="submit" value="Submit" id="reload">
+				<input type="submit" value="Stabilize" id="stabilize">
+			</div>
+		<div>
+		
+	</div>
+</div>
+
+</body>
+
+<script>
+	$("#reload").click(function() {
+
+		var cypher = $("#cypher").val();
+
+		if (cypher.length > 3) {
+			viz.renderWithCypher(cypher);
+		} else {
+			console.log("reload");
+			viz.reload();
+
+		}
+
+	});
+
+	$("#stabilize").click(function() {
+		viz.stabilize();
+	})
+
+</script>
+</html>
