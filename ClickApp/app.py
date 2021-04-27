@@ -126,7 +126,7 @@ def profile_post():
         return redirect(url_for("login_get"))
 
 @app.route('/accounts/mypage2', methods=['GET'])
-def mypage():
+def mypage2():
     # Make sure the user has an active session.  If not, redirect to the login page.
     #if "usr" in session:
      #   usr = session["usr"]
