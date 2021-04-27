@@ -1,0 +1,361 @@
+<html>
+<head>
+
+	<title>CSCI6600TeamProject</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<style>
+		h1 {
+			color: #5386E4;
+			text-align: center;
+		}
+
+		#logoMessage {
+		  color: #434B63;
+		  text-align: center;
+		}
+
+
+		#namecard {
+			background-color:white;
+			margin: 25%;
+			max-height: 50%;
+			max-width: 50%;
+			float:center;
+			margin-top: 10%;
+		}
+
+		body {
+			background-color: #C3C3C3;
+		}
+
+
+		#SignUpBtn {
+			background-color: #5386E4;
+		}
+
+		#SignUpBtn:hover {
+			background-color: #538600;
+		}
+
+		#LoginBtn {
+			background-color: #5386E4;
+		}
+
+		#LoginBtn:hover {
+			background-color: #538600;
+		}
+
+		#simplecard {
+			background-color:  #C3C3C3;
+
+		}
+
+		h1 {
+			color: #5386E4;
+			text-align: center;
+		}
+
+		h2 {
+			color: #5386E4;
+			text-align: center;
+		}
+
+
+		.navbar {
+			  list-style-type: none;
+			  margin: 0;
+			  padding: 0;
+			  overflow: hidden;
+			  background-color: #FFFFFF;
+			}
+
+		.navbar li {
+			  display: block;
+			  color: #5386E4;
+			  text-align: center;
+			  text-decoration: none;
+			}
+
+
+		.navbar li:hover{
+			 background-color: #5386E0;
+			}
+
+		.navbar ul li h4:hover{
+			color: #FFFFFF;
+		}
+
+		.navbar li a:hover {
+			background-color: #BBE100;
+			color: #FFFFFF;
+			}
+
+		.navbar ul li h4 {
+			color: #5386E4;
+			text-align: center;
+		}
+
+		.navbar-brand img {
+			max-height: 250%;
+			max-width: 100%;
+		}
+
+		.active {
+			background-color: #C3C3C3;
+		}
+
+		#UpDateProfileBtn {
+			background-color: #5386E4;
+		}
+
+		#UpDateProfileBtn:hover {
+			background-color: #538600;
+		}
+
+		#LogOffBtn {
+			background-color: #5386E4;
+		}
+
+		#LogOffBtn:hover {
+			background-color: #538600;
+		}
+
+
+	</style>
+
+    <style type="text/css">
+        html, body {
+            font: 16pt arial;
+        }
+
+        #viz {
+            width: 900px;
+            height: 700px;
+            border: 1px solid lightgray;
+            font: 22pt arial;
+            float:right;
+        }
+
+    </style>
+    <style type="text/css">
+    .node { stroke: #222; stroke-width: 1.5px; }
+    .node.Person { fill: #BBB; }
+    .node.Event { fill: #00BFFF; }
+    .link { stroke: #999; stroke-opacity: .6; stroke-width: 1px; }
+    </style>
+
+    <!-- : load from local download (do a npm build as well...)
+	<script src='C:\Users\17046\node_modules\neovis.js\dist\neovis.js'></script> -->
+
+    <script src='https://cdn.neo4jlabs.com/neovis.js/v1.5.0/neovis.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+		// define config car
+		// instantiate nodevis object
+		// draw
+
+		var viz;
+
+		function draw() {
+			var config = {
+				container_id: "viz",
+				server_url: "bolt://localhost:7687",
+				server_user: "kelle",
+				server_password: "111",
+				labels: {
+					//"Person": "name",
+					"Person":{
+						"caption": "name",
+						"size": "2",
+						"community": "10"
+						//"sizeCypher": "MATCH (n) WHERE id(n) = {id} MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
+					},
+					"Event":{
+						"caption":"title",
+						"size": "1",
+						"community": "5"
+					}
+				},
+				relationships: {
+					"friendsWith": {
+						"thickness": 1,
+						"caption": false
+					},
+					"postedEvent": {
+						"thickness": 1,
+						"caption":false
+					},
+					"liked": {
+						"thickness":1,
+						"caption":false
+					}
+				},
+				initial_cypher: "MATCH (n:Person),(m:Person),l=(n)-[friendsWith]->(m) RETURN n,m,l;"
+				//initial_cypher: "MATCH (n:Person), (m:Event), l=(n)-[r:postedEvent]->(m) RETURN n,m,l,r;"
+				//initial_cypher: "MATCH (n:Person), (m:Event), l=(n)-[r:postedEvent]->(m), k=(n)-[s:liked]->(m) RETURN n,m,l,r;"
+				//initial_cypher : "MATCH (n:Person), (m:Person), (w:Person), (z:Person), (o:Event), (q:Event),  p=(n)-[r:postedEvent]->(o), k=(m)-[s:friendsWith]->(w), l=(z)-[t:liked]->(q) RETURN n,m,w,z,o,q,p,r,k,l;"
+			};
+
+			viz = new NeoVis.default(config);
+			viz.render();
+			console.log(viz);
+		}
+    </script>
+</head>
+<body onload="draw()">
+<nav class = "navbar navbar-default" role = "navigation">
+<div class="container-fluid">
+   <div class = "navbar-header" >
+      <a class = "navbar-brand" href = "index.html"><span>
+      	<img src = "../../static/img/clik.png" height="47" class="img img-fluid img-responsive" ></span></a>
+   </div>
+
+   <div>
+   	<ul class = "nav navbar-nav">
+   		 <li><a href="/"><h1> Home </h1></a></li>
+	</ul>
+   </div>
+    <div class="nav navbar-nav navbar-right">
+   		<button type="button" id="AddEventBtn" class="btn btn-primary">Add an Event</button>
+   		<button type="button" id="SeeEventsBtn" class="btn btn-primary">See Events</button>
+		<button type="button" id="AddFriendBtn" class="btn btn-primary" >Add a Friend</button>
+   		<button type="button" id="UpDateProfileBtn" class="btn btn-primary">Update Profile</button>
+   </div>
+</div>
+</nav>
+
+
+<div class="container-fluid">
+	<div class='row'>
+		<div class="col-8" align="right" id="viz">
+    	</div>
+		<div class="col-4">
+			<h2>Cypher query: </h2>
+			<div style={background-color:"white"}>
+				<textarea rows="4" cols=30 id="cypher"></textarea><br>
+				<input type="submit" value="Submit" id="reload">
+				<input type="submit" value="Stabilize" id="stabilize">
+			</div>
+		<div>
+
+	</div>
+</div>
+
+<!-- the add event modal -->
+<div class="modal fade" id="AddEventModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Add Event</h4>
+			</div>
+			<div class="modal-body">
+				<div class="wrapper">
+					<div class="form1" action='http://google.com'>
+						<div class="formtitle">
+							<div class="input nobottomborder">
+								<div class="formgroup">
+									<div class="inputtext">Event:
+									</div>
+
+							    </div>
+							    <div class="formgroup">
+							    	<div class="inputtext">Event Details:
+							    	</div>
+							    	<div class="inputcontent"> <input
+							    		type="text" name="title" id="title" placeholder="title of event"/><br />
+							    	</div>
+							    	<div class="inputcontent"> <input
+							    		type="email" name="email" id="contact" placeholder="email"/><br />
+							    	</div>
+							    	<div class="inputcontent"> <input
+							    	type="textarea" name="when_where" id='details'
+							    	placeholder="when and where" /><br />
+							    	</div>
+							    	<div class="inputcontent"> <input
+							    		type="textarea" name="desctiption" id="description" placeholder="brief description"/><br />
+							    	</div>
+							    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default"
+				data-dismiss="modal" id="SubmitEventBtn">Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script>
+	$("#reload").click(function() {
+		var cypher = $("#cypher").val();
+		if (cypher.length > 3) {
+			viz.renderWithCypher(cypher);
+		} else {
+			console.log("reload");
+			viz.reload();
+		}
+	});
+
+$(document).ready(function(){
+	$("#AddEventBtn").click(function() {
+		$('#AddEventModal').modal('show')
+	});
+});
+
+$(document).ready(function(){
+	$("#SeeEventsBtn").click(function() {
+		var cypher = 'MATCH (e:Event) RETURN (e);';
+		if (cypher.length > 3) {
+		    viz.renderWithCypher(cypher);}
+		else {
+			console.log("reload");
+			viz.reload();
+		}
+	})
+});
+
+$(document).ready(function(){
+	$("#SubmitEventBtn").click(function() {
+		var begin_with = "CREATE (n:Event {title:'";
+		var the_details = "', details:'";
+		var the_contact="', email:'";
+		var the_descript = "',description:'";
+		var end_with= "'}); ";
+		var cypher1 = begin_with + $('#title').val().trim()+ the_descript + $('#description').val().trim() + the_details + $('#details').val().trim() + the_contact+ $('#contact').val().trim()+end_with;
+		console.log(cypher1);
+		viz.renderWithCypher(cypher1);
+		var cypher2 = "MATCH (n:Person), (m:Event) where n.email='"+ $('#contact').val().trim()+"' and m.title = '"+$('#title').val().trim()+"' and m.email = '"+ $('#contact').val().trim()+"' CREATE (n)-[:postedEvent]->(m);";
+		console.log(cypher2);
+		viz.renderWithCypher(cypher2);
+		var cypher3 = "MATCH (n:Person),(m:Person),(w:Person),(z:Person),(o:Event),(q:Event), p=(n)-[postedEvent]->(o), k=(m)-[friendsWith]->(w), l=(z)-[liked]->(q) RETURN n,m,w,z,o,q,p,k,l;"
+		console.log(cypher3);
+		viz.renderWithCypher(cypher3.trim());
+	});
+});
+    //really dont know what this does ...
+	$("#stabilize").click(function() {
+		viz.stabilize();
+	})
+
+</script>
+</body>
+</html>

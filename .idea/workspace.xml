@@ -2,8 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62eec40b-d64e-4ec0-98ec-fd7cc45501c4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ClickApp/Model/accounts_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/Model/classes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/data/db_session.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/static/css/site.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/static/img/Find_match.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/static/img/OMallySharedInterest.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/static/img/addAdminPassword.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/static/img/addInterest.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/static/img/improveColor.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/static/img/index.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/static/img/interested_in_event.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/static/img/mypage.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/static/img/neo4jdesktop.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/static/img/too_many_stevens.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/static/img/updateofuserrecordinfo.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/static/img/viewAll.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/templates/accounts/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/templates/accounts/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/templates/accounts/mypage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/templates/accounts/mypage2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/templates/accounts/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/templates/home/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClickApp/templates/shared/_layout.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/accounts/mypage2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/olderFiles/clik.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/accounts/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/accounts/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/accounts/mypage.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/accounts/mypage.html" afterDir="false" />
@@ -24,6 +53,9 @@
       <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/templates/shared/_layout.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/views/account_views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/views/home_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clik.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/ClickApp/static/img/clik.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/olderFiles/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypage.html" beforeDir="false" afterPath="$PROJECT_DIR$/olderFiles/mypage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +79,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/app.py" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ClickApp/app.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\17046\Documents\ECU\DBMS\Project\database_project\ClickApp" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\17046\Documents\ECU\DBMS\Project\database_project\olderFiles" />
     </key>
@@ -64,11 +99,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\17046\Documents\ECU\DBMS\Project\database_project\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ClickApp" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/app.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ClickApp/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />

@@ -1,0 +1,132 @@
+{% extends "shared/_layout.html" %}
+{% block additional_css %}
+
+{% endblock %}
+{% block title %}Home{% endblock %}
+{% block main_content %}
+
+<div class="main" >
+    <div class="form-wrapper container-fluid">
+        <form method="post">
+            <h2>Profile</h2>
+            {% for info in user_profile %}
+                <input class="form-control" type="text" name="name" placeholder=" Full Name" value="{{ info.name }}">
+                <input class="form-control" type="text" name="email" placeholder=" email" value="{{ info.email }}">
+            {% endfor %}
+            <div>
+                <button type="button" class="bt btn-default btn-sm" id="ToClikBtn" action="\accounts\mypage2">Continue to Clik</button>
+                <button type="button" class="bt btn-default btn-sm" id="MLModalBtn">Clik to Improve Clik Recommendations</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div style="background-image: url('/static/img/clik.PNG');"><img src="../../static/img/clik.PNG"></div>
+<!-- the add event modal -->
+<div class="modal fade" id="MLModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Answer a Few Question to Help Clik Make Better Recommendations</h4>
+			</div>
+			<div class="modal-body">
+				<div class="wrapper"><!-- the add event modal -->
+				<form id="MIInfo">
+                    <div class="form-row">
+			        <p> Outdoor Sports:</p>
+			            <div class="form-group col-md-12">
+				            <div class="radio">
+					        <label><input type="radio" name="outsports" id="true_radio" value=1 >True</label>
+				            </div>
+				            <div class="radio">
+					        <label><input type="radio" name="outsports" id="false_radio" value=0 checked >False</label>
+				            </div>
+			            </div>
+		            </div>
+                    <div class="form-row">
+			        <p> Indoor Sports:</p>
+			            <div class="form-group col-md-12">
+				            <div class="radio">
+					        <label><input type="radio" name="insports" id="true_radio" value=1 >True</label>
+				            </div>
+				            <div class="radio">
+					        <label><input type="radio" name="insports" id="false_radio" value=0 checked >False</label>
+				            </div>
+			            </div>
+		            </div>
+                    <div class="form-row">
+			        <p> Concerts:</p>
+			            <div class="form-group col-md-12">
+				            <div class="radio">
+					        <label><input type="radio" name="concerts" id="true_radio" value=1 >True</label>
+				            </div>
+				            <div class="radio">
+					        <label><input type="radio" name="concerts" id="false_radio" value=0 checked >False</label>
+				            </div>
+			            </div>
+		            </div>
+                    <div class="form-row">
+			        <p> Art:</p>
+			            <div class="form-group col-md-12">
+				            <div class="radio">
+					        <label><input type="radio" name="art" id="true_radio" value=1 >True</label>
+				            </div>
+				            <div class="radio">
+					        <label><input type="radio" name="art" id="false_radio" value=0 checked >False</label>
+				            </div>
+			            </div>
+		            </div>
+                    <div class="form-row">
+			        <p> Food:</p>
+			            <div class="form-group col-md-12">
+				            <div class="radio">
+					        <label><input type="radio" name="food" id="true_radio" value=1 >True</label>
+				            </div>
+				            <div class="radio">
+					        <label><input type="radio" name="food" id="false_radio" value=0 checked >False</label>
+				            </div>
+			            </div>
+		            </div>
+                    <div class="form-row">
+			        <p> Pets:</p>
+			            <div class="form-group col-md-12">
+				            <div class="radio">
+					        <label><input type="radio" name="pets" id="true_radio" value=1 >True</label>
+				            </div>
+				            <div class="radio">
+					        <label><input type="radio" name="pets" id="false_radio" value=0 checked >False</label>
+				            </div>
+			            </div>
+		            </div>
+	        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default"
+                data-dismiss="modal" id="SubmitMIInfoBtn">Submit</button>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+	$("#MLModalBtn").click(function() {
+		$('#MLModal').modal('show')
+	});
+});
+
+$(document).ready(function(){
+	$("#ToClikBtn").click(function() {
+		window.location.href="/accounts/mypage2";
+	});
+});
+
+$(document).ready(function(){
+	$("#SubmitMIInfoBtn").click(function() {
+		window.location.href="/accounts/mypage2";
+	});
+});
+</script>
+{% endblock %}

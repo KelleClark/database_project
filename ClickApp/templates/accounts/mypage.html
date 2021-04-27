@@ -1,0 +1,131 @@
+{% extends "shared/_layout.html" %}
+{% block title %}Clik User Page{% endblock %}
+{% block main_content %}
+   <div class="container">
+   	<div class="row" >
+        <div class="col-md-2">
+            <a href="/"><h4> Home </h4></a></div>
+        <div class="col-md-2">
+            <a href="/accounts/login"><h4> My Profile</h4></a></div>
+		<div class="col-md-2">
+   		<button type="button" id="AddEventBtn" class="btn btn-primary">Add an Event</button></div>
+		<div class="col-md-2">
+   		<button type="button" id="SeeEventsBtn" class="btn btn-primary">See Events</button></div>
+		<div class="col-md-2">
+		<button type="button" id="AddFriendBtn" class="btn btn-primary" >Add a Friend</button></div>
+		<div class="col-md-2">
+   		<button type="button" id="UpDateProfileBtn" class="btn btn-primary">Update Profile</button></div>
+   </div>
+	</div>
+   </div>
+
+    <div class="container-fluid">
+	    <div class='row'>
+		    <div class="col-8" align="right" onload="draw()">
+				<div id="viz"></div>
+    	    </div>
+		    <div class="col-4">
+			    <h2>Cypher query: </h2>
+			    <div style={background-color:"white"}>
+				    <textarea rows="4" cols=30 id="cypher"></textarea><br>
+				    <input type="submit" value="Submit" id="reload">
+				    <!--<input type="submit" value="Stabilize" id="stabilize">-->
+			    </div>
+		    </div>
+	    </div>
+    </div>
+
+
+<script src='https://cdn.neo4jlabs.com/neovis.js/v1.5.0/neovis.js'></script>
+  	 <script type="text/javascript">
+		// define config car
+		// instantiate neovis object
+		// draw
+
+		var viz;
+
+		function draw() {
+			//var config = {
+			//	container_id: "viz",
+			//	server_url: "bolt://localhost:7687",
+			//	server_user: "kelle",
+			//	server_password: "111",
+			//	labels: {
+			//		//"Person": "name",
+			//		"Person": {
+			//			"caption": "first_name",
+			//			"size": "2",
+			//			"community": "10"
+			//			//"sizeCypher": "MATCH (n) WHERE id(n) = {id} MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
+			//		},
+			//		"Event":{
+			//			"caption":"Location",
+			//			"size": "1",
+			//			"community": "5"
+			//		}
+			//	},
+			//	relationships: {
+			//		"interestedIn": {
+			//			"thickness": 1,
+			//			"caption": false
+			//		}
+			//	},
+			//	initial_cypher: "MATCH n=(:Person), m=(:Event),p=(:Person)-[:interestedIn]->(:Event) RETURN n,m,p"
+			//};
+			var config = {
+				container_id: "viz",
+				server_url: "bolt://localhost:7687",
+				server_user: "neo4j",
+				server_password: "111",
+				labels: {
+					"user": {
+						"caption": "name",
+						"size": "2",
+						"community": "10"
+						//"sizeCypher": "MATCH (n) WHERE id(n) = {id} MATCH (n)-[r]-() RETURN sum(r.weight) AS c"
+					},
+					"Event":{
+						"caption":"title",
+						"size": "1",
+						"community": "5"
+					}
+				},
+				relationships: {
+					"liked": {
+						"thickness": 1,
+						"caption": false
+					}
+					"postedEvent": {
+						"thickness": 1,
+						"caption":false
+					}
+				},
+				initial_cypher: "MATCH n=(:user), m=(:Event),p=(:User)-[:interestedIn]->(:Event) RETURN n,m,p"
+			};
+			viz = new NeoVis.default(config);
+			viz.render();
+		};
+</script>
+<script>
+   $(document).ready(function(){
+        draw();
+	});
+
+</script>
+<script>
+	$("#reload").click(function() {
+		var cypher = $("#cypher").val();
+		if (cypher.length > 3) {
+			viz.renderWithCypher(cypher);
+		} else {
+			console.log("reload");
+			viz.reload();
+		}
+    });
+
+	$("#stabilize").click(function() {
+		viz.stabilize();
+	});
+
+</script>
+{% endblock %}
