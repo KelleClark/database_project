@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSCI6700TeamProject</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic|Source+Code+Pro:500">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/site.css"/>-->
+    <link rel="stylesheet" href="https://cdn.usebootstrap.com/bootstrap/4.6.0/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">-->
+    <script src='https://cdn.neo4jlabs.com/neovis.js/v1.5.0/neovis.js'></script>
+    <script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <style>
+        h1 {
+			color: #5386E4;
+			text-align: center;
+		}
+        .topnav{
+            background-color:white;
+        }
+
+		#logoMessage {
+		  color: #434B63;
+		  text-align: center;
+		}
+
+		#namecard {
+			background-color:white;
+			margin: 25%;
+			max-height: 50%;
+			max-width: 50%;
+			float:center;
+			margin-top: 10%;
+		}
+
+		body {
+			background-color: #001F3F;
+			style="background-image: url('../../static/img/clik.PNG');
+		}
+
+		#SignUpBtn {
+			background-color: #5386E4;
+		}
+
+		#SignUpBtn:hover {
+			background-color: #538600;
+		}
+
+		#LoginBtn2 {
+			background-color: #5386E4;
+		}
+
+		#LoginBtn2:hover {
+			background-color: #F0F8FF;
+		}
+
+		#LoginBtn {
+			background-color: #5386E4;
+		}
+
+		#LoginBtn:hover {
+			background-color: #F0F8FF;
+		}
+
+        #CreateAccountBtn {
+            background-color: #5386E4;
+        }
+
+        #CreateAccountBtn:hover {
+			background-color: #F0F8FF;
+		}
+
+
+
+		#simplecard {
+			background-color:  #C3C3C3;
+
+		}
+
+        .node { stroke: #222; stroke-width: 1.5px; }
+        .node.User { fill: #BBB; }
+        .node.Event { fill: #BBB; }
+        .link { stroke: #999; stroke-opacity: .6; stroke-width: 1px; }
+
+        #viz {
+            width:900px;
+            height: 700px;
+            border: 1px solid lightgray;
+            font:22pt arial;
+            float:right;
+            background-color: #C3C3C3;
+        }
+
+
+    </style>
+
+    {% block additional_css %}{% endblock %}
+</head>
+<body>
+
+<!--<div class="topnav">
+     <a href="/"><h1>Clik</h1></a>
+</div>-->
+
+
+
+<div class="main_content">
+    {% block main_content %}{% endblock %}
+</div>
+
+<footer></footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
