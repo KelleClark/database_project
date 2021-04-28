@@ -1,17 +1,115 @@
+<!--
+*** The Best-README-Template at https://github.com/othneildrew/Best-README-TemplateIf 
+-->
+
+
+
+<!-- PROJECT SHIELDS -->
+<!--
+*** Can use markdown "reference style" links for readability or html if needed
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/KelleClark/database_project" alt="Logo" width="80" height="80"><img src="https://github.com/KelleClark/database_project/ClikApp/static/img/clik.png">
+  </a>
+
+  <h3 align="center">Clik</h3>
+
+  <p align="center">
+    project_description
+    <br />
+    <a href="https://github.com/KelleClark/database_project"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/KelleClark/database_project">View Demo</a>
+    ·
+    <a href="https://github.com/KelleClark/database_project">Report Bug</a>
+    ·
+    <a href="https://github.com/KelleClark/database_project">Request Feature</a>
+  </p>
+</p>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
 An objective of social media platforms is to connect members with individuals and groups who share similar interests or connections. While FB, Twitter, LI, Reddit and Instagram provide users with an enjoyable and useful service, many believe that these social media sites make users less social. Current social applications available indirectly promote more time behind the screen, encourage individuals to make large and superficial connections, and enable the consumption of curated information that does not reflect reality. This project aims to provide users with some of the functionality of benchmark social media applications but with a focus on a design that improves real interaction between users.  The proposed system would include a three tier design implemented as a locally hosted web application for the scope of this semester-long project. 
 
 The overarching goal for the system, as viewed by the team, is to bring people together in authentic ways that foster real relationships off screen. The application's use cases will be constructed in early stages of development as the team explores the personas of typical users and the tasks and goals of those users. Possible use cases are to enable the user to create small social circles and to enable the user to engage in face-to-face interactions in real-time.
 
+### Built With
 
-The Package for Click can be found at KelleClark/database_project (github.com) . One way to run the system locally on your computer:
+* [CSS]
+* [HTML]
+* [js]
+* [Boostrap](https://getbootstrap.com)
+* [JQuery](https://jquery.com)
+* [flask](https://pypi.org/project/Flask/)
+* [Neo4j](https://neo4j.com)
+* [neovis]
+* [py2neo]
+* [PyCharm](https://www.jetbrains.com/pycharm/)
 
-	1. You will need to have the following on your computer:
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow the steps provided in the quick start below.
+
+### Prerequisites
+You will need to have the following on your computer:
 Python 
 PyCharm 2019 or later 
 Neo4j Desktop v.4 or later
 Git
 
-Note where you store Python and Git within your File System, you will need to set the location of the .exe files when setting up your project.
+
+## (not quite a) Quick Start
+### Installation and Local Test Setup
+1. Note where you store Python and Git within your File System, you will need to set the location of the .exe files when setting up your project.
 
 2. Open PyCharm and select NewProjec Figure 11.1t:
 choose a location for your new project on your computer
@@ -169,30 +267,6 @@ After the new database is started on the desktop and the neo4j browser is opened
 Figure 11.14  Mypage for Clik when the Friend and Event database is available
 
 The Nodes and relationships represented in the small clik network of users have similar schema and are best viewed using the Neo4j browser (neo4j@bolt://localhost:7687) 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Figure 11.15  The schema for a Person node and for an Event Node
 
 
@@ -216,6 +290,73 @@ Section 11.3 The View and The Controller
 We have seen that the flask framework allows the client (and browser) to request different views for the user like the html pages with css/bootstrap/js/jquery in the templates folder of the application: login page, the create account page, the profile page, and mypage. These requests are controlled using @app.route methods of our flask application within app.py.
 
 The needed libraries for the pages of the application are utilized by the inclusion of scripts and links to url within content delivery networks with as much of this header information included in a _layout.html file and use jinja to extend this file.  
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/KelleClark/database_project) for a list of proposed features (and known issues).
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@KClarkcode](https://twitter.com/KClarkcode) - clarkke20@students.ecu.edu
+
+Project Link: [https://github.com/KelleClark/database_project](https://github.com/KelleClark/database_project)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* [Kelle Clark]()
+* [Greg Sutton]()
+
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/KelleClark/repo.svg?style=for-the-badge
+[contributors-url]: https://github.com/KelleClark/repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/KelleClark/repo.svg?style=for-the-badge
+[forks-url]: https://github.com/KelleClark/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/KelleClark/repo.svg?style=for-the-badge
+[stars-url]: https://github.com/KelleClark/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/KelleClark/repo.svg?style=for-the-badge
+[issues-url]: https://github.com/KelleClark/repo/issues
+[license-shield]: https://img.shields.io/github/license/KelleClark/repo.svg?style=for-the-badge
+[license-url]: https://github.com/KelleClark/repo/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/KelleClark
 
 
 # database_project
