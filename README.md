@@ -35,8 +35,9 @@
     <a href="https://github.com/KelleClark/database_project/blob/main/docs/images/create_new_proejct.PNG"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://wingate.zoom.us/rec/share/wXTVql6lpyTRb1L0-7qXDNnDOde3syDmq7aLP_7Tl7iipA_5CYBMhmWC7dX5gpGw.27pDgVX_NFzDBYMC?startTime=1619626329000">View Demo (skip min 9 to 19 for version updates!</a>
-    ·
+    <a href="https://wingate.zoom.us/rec/share/wXTVql6lpyTRb1L0-7qXDNnDOde3syDmq7aLP_7Tl7iipA_5CYBMhmWC7dX5gpGw.27pDgVX_NFzDBYMC?startTime=1619626329000">View Demo (skip min 9 to 19 for version updates</a>
+    <br />
+  <br />
     <a href="https://github.com/KelleClark/database_project">Report Bug</a>
     ·
     <a href="https://github.com/KelleClark/database_project">Request Feature</a>
@@ -169,14 +170,10 @@ Figure 11.5  Set up the PyCharm configuration to run the ClickApp
 Before we run the system, find the file for our configuration of the graph databases as highlighted in Figure 11.6
 
 Figure 11.6: Find the configuration file for Graph neo4j object 
-<p><img src="https://github.com/KelleClark/database_project/blob/main/docs/images/system_file_structure.PNG"></p>
+<p><img src="https://github.com/KelleClark/database_project/blob/main/docs/images/db_session"></p>
 
-Update your username and password that you just added to the Neo4j Database within your new project as shown in Figure 11.7.
-
-
-Figure 11.7  : Make sure to change user and password to your information from your Neo4j Project Database
-from py2neo import Graph
-<p><img src="https://github.com/KelleClark/database_project/blob/main/docs/images/db_session.PNG"></p>
+Update your username and password that you just added to the Neo4j Database within your new project within the db_session.py file. For the project in the
+Neo4j database, my system id has username  'kelle' and password '111' so these are the values I set for me.
 
 def db_auth():
    user = 'kelle'
@@ -197,9 +194,6 @@ Section 11.2 The Model
 We used two different graph databases, one to authenticate the user and issue a token so that a request to the server would not return information unless the token could be decoded and determined to be signed.  The other graph database is for the Person and Event node objects and the interestedIn and postedEvent relationships between two Persons or a Person and an Event.  
 
 The schema for User, Figure 11.9, defined as a python class and used within the Graph object,  is  defined in the classes.py file of the Model directory. 
-
-
-
 
 The email attribute of User will serve as the primary key (and is thus required).  The label for the node in the Graph associated with an instance of a User will be the name attribute.  When a user registers, their password is encrypted and stored within their user node.  This is the method used to ensure that the user’s information is only available to them during their session and could also be used to set views and permissions within the system.  If the system were to have used a token for a user, then a token would be generated with each login of the user, and would be encoded (not encrypted). The token is included with all requests to the server and checked to see if when decoded returns “signed.”  If signed, then the get request continues; otherwise, an error of invalid user is returned in the terminal.   We chose to use a dictionary data type and the idea of a session.  The user’s email is included in the session and if the user’s email is a key of the dictionary...then the system uses the values of the dictionary.
 
@@ -238,24 +232,19 @@ Figure 11.13 Mypage for Clik
 After the new database is started on the desktop and the neo4j browser is opened for the server to connect, the div on the right side will contain the user’s friends and events using the initial cypher query. The py2neo connection does use a http:127.0.0.1:7474 url for the graph object, while the neovis connection uses a bolt:127.0.0.1:7687 url.  Within the settings file of each db are options for using different ports and protocols...but making it work seamlessly was beyond the time frame and ability currently. 
 Figure 11.14  Mypage for Clik when the Friend and Event database is available
 
-<p><img src="https://github.com/KelleClark/database_project/blob/main/docs/images/continue_to_clik_after_new_db.PNG"></p>
+<p><img src="https://github.com/KelleClark/database_project/blob/main/docs/images/continue_to_clik_before_new_db.PNG"></p>
 
 The Nodes and relationships represented in the small clik network of users have similar schema and are best viewed using the Neo4j browser (neo4j@bolt://localhost:7687) 
 Figure 11.15  The schema for a Person node and for an Event Node
 
 
-
-
-
-
-
-
-
-
 The fact that information is kept in a graphical database allows many queries to be performed with only a few lines of ciphertext and we do not need joins which makes queries faster.
 
 
-Figure 11.16 The relationships between Nodes and Events 
+Figure 11.16 The relationships between Person and Event nodes/
+<p><img src="https://github.com/KelleClark/database_project/blob/main/docs/images/within_neo4j_browser.PNG"></p>
+<p><img src ="https://github.com/KelleClark/database_project/blob/main/docs/images/a_person_json.PNG"></p>
+<p><img src ="https://github.com/KelleClark/database_project/blob/main/docs/images/an_event_json.PNG"></p>
 
 
 From Neo4j, we see that the email for a Person and the node id can both be used as a primary key...the choice of the primary key being the email is based on the context of many use cases.  A user would not find it convenient to rely on knowing what a friend’s node id is that is assigned to them by neo4j, id(n) where n is the friends’ node in the graphical database.  Using an email to perform tasks such as add a friend is more appropriate in this use case. In the use case where we would like to return all friends of a user, we know the user’s email address from their session key value. Using a cypher query with the match on email address and has a ‘friendsWith” relationship allows the system to generate a view of all friends of the user. This is also the case when a user would like to view all events they have posted with the relationship “postedEvent” replacing “friendsWith.”
