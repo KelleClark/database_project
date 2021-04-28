@@ -32,10 +32,10 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/KelleClark/database_project"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/KelleClark/database_project/blob/main/docs/images/create_new_proejct.PNG"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/KelleClark/database_project">View Demo</a>
+    <a href="https://wingate.zoom.us/rec/share/wXTVql6lpyTRb1L0-7qXDNnDOde3syDmq7aLP_7Tl7iipA_5CYBMhmWC7dX5gpGw.27pDgVX_NFzDBYMC?startTime=1619626329000">View Demo (skip min 9 to 19 for version updates!</a>
     ·
     <a href="https://github.com/KelleClark/database_project">Report Bug</a>
     ·
@@ -80,6 +80,11 @@ An objective of social media platforms is to connect members with individuals an
 
 The overarching goal for the system, as viewed by the team, is to bring people together in authentic ways that foster real relationships off screen. The application's use cases will be constructed in early stages of development as the team explores the personas of typical users and the tasks and goals of those users. Possible use cases are to enable the user to create small social circles and to enable the user to engage in face-to-face interactions in real-time.
 
+We followed the lead of those who came before us and pulled things together, putting our flair on things!  Please explore our resources:
+* [Building a Python Web Application Using Flask](https://neo4j.com/blog/building-python-web-application-using-flask-neo4j/)
+* [Nicole White's extension of the sql blog example to a Neo4j blog](https://neo4j.com/blog/building-python-web-application-using-flask-neo4j/)
+* [Josh Thurston's update of Nicole White's work with focus on Security](https://medium.com/swlh/flask-user-auth-with-neo4j-cca79aa90f57)
+
 ### Built With
 
 * [CSS]
@@ -101,10 +106,12 @@ To get a local copy up and running follow the steps provided in the quick start 
 
 ### Prerequisites
 You will need to have the following on your computer:
-Python 
-PyCharm 2019 or later 
-Neo4j Desktop v.4 or later
-Git
+<ul>
+  <li>Python </li>
+  <li>PyCharm 2019 or later </li>
+  <li>Neo4j Desktop v.4 or later </li>
+  <li>Git</li>
+</ul>
 
 
 ## (not quite a) Quick Start
@@ -116,7 +123,7 @@ choose a location for your new project on your computer
 set the location of your Python Interpreter: New Virtual Environment to your Python.exe
 create 
 Figure 11.1 Set up new project
-<p><img src="https://github.com/KelleClark/database_project/blob/main/docs/images/create_new_project.PNG"></p>
+<p><img src="https://github.com/KelleClark/database_project/blob/main/docs/images/create_new_proejct.PNG"></p>
 
 3. Under Files/Settings/Version Control select Git and fill in the location on your computer of your Git.exe file, see Figure 11.2
 
