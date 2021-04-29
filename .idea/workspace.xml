@@ -1,32 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62eec40b-d64e-4ec0-98ec-fd7cc45501c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/accounts/mypage2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_27_2021_12_23_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_27_2021_12_23_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_27_2021_12_23_PM__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_27_2021_12_23_PM__Default_Changelist_1.xml" afterDir="false" />
+    <list default="true" id="62eec40b-d64e-4ec0-98ec-fd7cc45501c4" name="Default Changelist" comment="cleaning up repo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/accounts/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/accounts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/accounts/mypage.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/accounts/mypage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/home/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/shared/_layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskNeo4jStarter/BasicApp/templates/shared/_layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/data/db_session.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/infrastructure/view_modifiers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/services/accounts_service.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/services/classes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/static/css/site.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/templates/accounts/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/templates/accounts/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/templates/accounts/logout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/templates/accounts/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/templates/home/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/templates/shared/_layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/views/account_views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskNeo4jStarter/BluePrintApp/views/home_views.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +32,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\17046\Documents\ECU\DBMS\Project\database_project\olderFiles" />
+      <recent name="C:\Users\17046\Documents\ECU\DBMS\Project\database_project\docs" />
     </key>
   </component>
   <component name="RunManager" selected="Python.what">
@@ -115,6 +92,14 @@
       <option name="presentableId" value="Default" />
       <updated>1619538543996</updated>
     </task>
+    <task id="LOCAL-00001" summary="cleaning up repo">
+      <created>1619652015141</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619652015141</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,5 +112,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="cleaning up repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning up repo" />
   </component>
 </project>
