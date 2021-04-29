@@ -32,7 +32,7 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/KelleClark/database_project/blob/main/docs/images/create_new_proejct.PNG"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/KelleClark/database_project/blob/main/docs/Clik%20(3).pdf"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://screencast-o-matic.com/watch/crfUVkVe44Q">Watch Demo</a>
