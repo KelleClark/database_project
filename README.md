@@ -35,7 +35,9 @@
     <a href="https://github.com/KelleClark/database_project/blob/main/docs/images/create_new_proejct.PNG"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://wingate.zoom.us/rec/share/wXTVql6lpyTRb1L0-7qXDNnDOde3syDmq7aLP_7Tl7iipA_5CYBMhmWC7dX5gpGw.27pDgVX_NFzDBYMC?startTime=1619626329000">View Demo (skip min 9 to 19 for version updates</a>
+    <a href="https://screencast-o-matic.com/watch/crfUVkVe44Q">Watch Demo</a>
+    <br />
+    <a href="https://wingate.zoom.us/rec/share/wXTVql6lpyTRb1L0-7qXDNnDOde3syDmq7aLP_7Tl7iipA_5CYBMhmWC7dX5gpGw.27pDgVX_NFzDBYMC?startTime=1619626329000">Demo File </a>
     <br />
   <br />
     <a href="https://github.com/KelleClark/database_project">Report Bug</a>
