@@ -96,6 +96,7 @@ The application uses Neo4j for the backend allowing for fast queries on the grap
 
 * [CSS]
 * [HTML]
+* [Jinja2]
 * [js]
 * [Boostrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
